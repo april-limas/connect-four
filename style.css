@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#connect4 {
+    width: 800px;
+    height: 600px;
+    background: blue;
+    margin: 35px auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.row {
+    flex-grow: 1;
+    display: flex;
+}
+
+.block {
+    flex-grow: 1;
+    border: 1px solid white;
+    border-radius: 50%;
+    background: white;
+}
+

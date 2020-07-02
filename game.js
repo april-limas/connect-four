@@ -25,7 +25,7 @@ for (let i = 0; i < players.length; i++) {
             currentPlayer.style.display = "block"
             currentPlayer = null
         }, 0)
-        
+
     })
 }
 
@@ -49,22 +49,21 @@ for (let j = 0; j < columns.length; j++) {
         let target = ev.currentTarget;
 
         let children = target.childNodes;
-       
+
         // let targetLastChild = target.lastElementChild
         for (let i = 11; i < children.length; i -= 2) {
             let currentChip = children[i]
             if (currentChip.classList.contains("yellow") || currentChip.classList.contains("red")) {
-                
+
                 continue
             } else {
                 // let fillCircle = document.getElementById(children[i].id)
                 let color = ev.dataTransfer.getData("color")
                 currentChip.classList.add(color)
-                console.log(currentChip.id)
-            // vertical
-                let down1 = parseInt(currentChip.id) + 1
-                let downOneString = down1.toString()
-                let downOneId = document.getElementById(downOneString)
+                let playerChip = parseInt(currentChip.id)
+
+                // vertical down
+                checkForWins(playerChip, currentChip)
 
                 let down2 = parseInt(currentChip.id) + 2
                 let downTwoString = down2.toString()
@@ -72,9 +71,9 @@ for (let j = 0; j < columns.length; j++) {
 
                 let down3 = parseInt(currentChip.id) + 3
                 let downThreeString = down3.toString()
-                let downThreeId = document.getElementById(downThreeString)                  
+                let downThreeId = document.getElementById(downThreeString)
 
-            // horizontal right
+                // horizontal right
                 let right1 = parseInt(currentChip.id) + 10
                 let rightOneString = right1.toString()
                 let rightOneId = document.getElementById(rightOneString)
@@ -86,9 +85,9 @@ for (let j = 0; j < columns.length; j++) {
                 let right3 = parseInt(currentChip.id) + 30
                 let rightThreeString = right3.toString()
                 let rightThreeId = document.getElementById(rightThreeString)
-                 
 
-            // horizontal left  
+
+                // horizontal left  
                 let left1 = parseInt(currentChip.id) - 10
                 let leftOneString = left1.toString()
                 let leftOneId = document.getElementById(leftOneString)
@@ -101,9 +100,9 @@ for (let j = 0; j < columns.length; j++) {
                 let leftThreeString = left3.toString()
                 let leftThreeId = document.getElementById(leftThreeString)
 
-                
 
-            // Diagonal Right Down
+
+                // Diagonal Right Down
                 let slantRightDown1 = parseInt(currentChip.id) + 11
                 let slantRightDownOneString = slantRightDown1.toString()
                 let slantRightDownOneId = document.getElementById(slantRightDownOneString)
@@ -116,7 +115,7 @@ for (let j = 0; j < columns.length; j++) {
                 let slantRightDownThreeString = slantRightDown3.toString()
                 let slantRightDownThreeId = document.getElementById(slantRightDownThreeString)
 
-            // Diagonal Left Down
+                // Diagonal Left Down
                 let slantLeftDown1 = parseInt(currentChip.id) - 9
                 let slantLeftDownOneString = slantLeftDown1.toString()
                 let slantLeftDownOneId = document.getElementById(slantLeftDownOneString)
@@ -129,7 +128,7 @@ for (let j = 0; j < columns.length; j++) {
                 let slantLeftDownThreeString = slantLeftDown3.toString()
                 let slantLeftDownhreeId = document.getElementById(slantLeftDownThreeString)
 
-            // Diagonal Right Up
+                // Diagonal Right Up
                 let slantRightUp1 = parseInt(currentChip.id) + 9
                 let slantRightUpOneString = slantRightUp1.toString()
                 let slantRightUpOneId = document.getElementById(slantRightUpOneString)
@@ -140,9 +139,9 @@ for (let j = 0; j < columns.length; j++) {
 
                 let slantRightUp3 = parseInt(currentChip.id) + 27
                 let slantRightUpThreeString = slantRightUp3.toString()
-                let slantRightUpThreeId = document.getElementById(slantRightUpThreeString) 
+                let slantRightUpThreeId = document.getElementById(slantRightUpThreeString)
 
-            // Diagonal Left Up
+                // Diagonal Left Up
                 let slantLeftUp1 = parseInt(currentChip.id) - 11
                 let slantLeftUpOneString = slantLeftUp1.toString()
                 let slantLeftUpOneId = document.getElementById(slantLeftUpOneString)
@@ -153,56 +152,104 @@ for (let j = 0; j < columns.length; j++) {
 
                 let slantLeftUp3 = parseInt(currentChip.id) - 33
                 let slantLeftUpThreeString = slantLeftUp3.toString()
-                let slantLeftUpThreeId = document.getElementById(slantLeftUpThreeString) 
+                let slantLeftUpThreeId = document.getElementById(slantLeftUpThreeString)
 
-                if (downOneId !== null && downTwoId !== null && downThreeId !== null) {
-                    if (currentChip.classList.contains("yellow") && downOneId.classList.contains("yellow") && downTwoId.classList.contains("yellow") && downThreeId.classList.contains("yellow")) {
-                            console.log("Yellow wins!")
-                            
-                    } else if (currentChip.classList.contains("red") && downOneId.classList.contains("red") && downTwoId.classList.contains("red") && downThreeId.classList.contains("red")) {
-                            console.log("Red wins!")
-                    } else {
-                        console.log ("Try again")
-                    }
-                   
-                }
-                
-                if (rightOneId !== null && rightTwoId !== null && rightThreeId !== null) {
-                    if (currentChip.classList.contains("yellow") && rightOneId.classList.contains("yellow") && rightTwoId.classList.contains("yellow") && rightThreeId.classList.contains("yellow")) {
-                            console.log("Yellow wins!")
-                            
-                    } else if (currentChip.classList.contains("red") && rightOneId.classList.contains("red") && rightTwoId.classList.contains("red") && rightThreeId.classList.contains("red")) {
-                            console.log("Red wins!")
-                    } else {
-                        console.log ("Try again")
-                    }
-                   
-                }
-                if (leftOneId !== null && leftTwoId !== null && leftThreeId !== null) {
-                    if (currentChip.classList.contains("yellow") && leftOneId.classList.contains("yellow") && leftTwoId.classList.contains("yellow") && leftThreeId.classList.contains("yellow")) {
-                            console.log("Yellow wins!")
-                            
-                    } else if (currentChip.classList.contains("red") && leftOneId.classList.contains("red") && leftTwoId.classList.contains("red") && leftThreeId.classList.contains("red")) {
-                            console.log("Red wins!")
-                    } else {
-                        console.log ("Try again")
-                    }
-                   
-                }
-                if (slantRightDownOneId !== null && slantRightDownTwoId !== null && slantRightDownThreeId !== null) {
-                    if (currentChip.classList.contains("yellow") && slantRightDownOneId.classList.contains("yellow") && slantRightDownTwoId.classList.contains("yellow") && slantRightDownThreeId.classList.contains("yellow")) {
-                            console.log("Yellow wins!")
-                            
-                    } else if (currentChip.classList.contains("red") && slantRightDownOneId.classList.contains("red") && slantRightDownTwoId.classList.contains("red") && slantRightDownThreeId.classList.contains("red")) {
-                            console.log("Red wins!")
-                    } else {
-                        console.log ("Try again")
-                    }
-                   
-                }
                 break
             }
         }
-        
+
     })
+}
+
+function checkForWins (playerChip, currentChip) {
+    if (winVerticallyDown(playerChip, currentChip)) {
+        setTimeout(function () {
+            location.reload()
+        }, 300)
+    } else {
+        checkingForTie()
+       
+    }
+}
+
+function winVerticallyDown(playerChip, currentChip) {
+    let downOneId = document.getElementById((playerChip + 1).toString())
+    if (downOneId !== null) {
+        let downTwoId = document.getElementById((playerChip + 2).toString())
+        let downThreeId = document.getElementById((playerChip + 3).toString())
+        if (downTwoId !== null && downThreeId !== null) {
+            if (currentChip.classList.contains("yellow") && downOneId.classList.contains("yellow") && downTwoId.classList.contains("yellow") && downThreeId.classList.contains("yellow")) {
+                alert("Yellow wins!") 
+                return true
+            } else if (currentChip.classList.contains("red") && downOneId.classList.contains("red") && downTwoId.classList.contains("red") && downThreeId.classList.contains("red")) {
+                alert("Red wins!")
+                return true
+            } else {
+                console.log("Didn't win downwards") 
+                return false
+            }
+        }
+    }
+
+}
+
+function winVerticallyUp(playerChip) {
+    let upOneId = document.getElementById((playerChip - 1).toString())
+    if (upOneId !== null) {
+        let upTwoId = document.getElementById((playerChip - 2).toString())
+        let upThreeId = document.getElementById((playerChip - 3).toString())
+        if (upTwoId !== null && upThreeId !== null) {
+            if (currentChip.classList.contains("yellow") && upOneId.classList.contains("yellow") && upTwoId.classList.contains("yellow") && upThreeId.classList.contains("yellow")) {
+                alert("Yellow wins!")
+            } else if (currentChip.classList.contains("red") && upOneId.classList.contains("red") && upTwoId.classList.contains("red") && upThreeId.classList.contains("red")) {
+                alert("Red wins!")
+            } else {
+                console.log("Didn't win upwards")
+            }
+        }
+    }
+
+}
+
+function winHorizontallyRight(playerChip) {
+    let rightOneId = document.getElementById((playerChip + 10).toString())
+    if (rightOneId !== null) {
+        let rightTwoId = document.getElementById((playerChip + 20).toString())
+        let rightThreeId = document.getElementById((playerChip + 30).toString())
+        if (rightTwoId !== null && rightThreeId !== null) {
+            if (currentChip.classList.contains("yellow") && rightOneId.classList.contains("yellow") && rightTwoId.classList.contains("yellow") && rightThreeId.classList.contains("yellow")) {
+                alert("Yellow wins!")
+            } else if (currentChip.classList.contains("red") && rightOneId.classList.contains("red") && rightTwoId.classList.contains("red") && rightThreeId.classList.contains("red")) {
+                alert("Red wins!")
+            } else {
+                console.log("Didn't win rightwards")
+            }
+        }
+    }
+
+}
+
+function checkingForTie() {
+    let boardChildren = board.childNodes
+    let count = 0
+    for (let col = 1; col < boardChildren.length; col+=2) {
+        let colChildren = boardChildren[col].childNodes
+        for (let row = 1; row < colChildren.length; row+=2) {
+            if (colChildren[row].classList.contains("yellow") || colChildren[row].classList.contains("red")) {
+
+                count += 1
+            }
+
+        }
+        console.log(count)
+        if (count === 42) {
+            setTimeout(function () {
+                alert("tie game") 
+            }, 300)
+            setTimeout(function () {
+                location.reload()
+            }, 300)
+        }
+    
+    }
 }

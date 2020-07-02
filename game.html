@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Four</title>
+    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="icon" data-rules="  Game Rules:
+
+Make a line of 4     
+(in any direction) 
+to win"><i class="fas fa-book-open"></i></div>
+    <div id="icon2" data-restart="Restart Game"><a href="game.html"><i class="fas fa-backward"></i></a></div>
+    <div id="board">
+        <div id="column1" class="columns">
+            <div id="11" class="row"></div>
+            <div id="12" class="row"></div>
+            <div id="13" class="row"></div>
+            <div id="14" class="row"></div>
+            <div id="15" class="row"></div>
+            <div id="16" class="row"></div>
+        </div>
+
+        <div id="column2" class="columns">
+            <div id="21" class="row"></div>
+            <div id="22" class="row"></div>
+            <div id="23" class="row"></div>
+            <div id="24" class="row"></div>
+            <div id="25" class="row"></div>
+            <div id="26" class="row"></div>
+        </div>
+        
+        <div id="column3" class="columns">
+            <div id="31" class="row"></div>
+            <div id="32" class="row"></div>
+            <div id="33" class="row"></div>
+            <div id="34" class="row"></div>
+            <div id="35" class="row"></div>
+            <div id="36" class="row"></div> 
+        </div>
+
+        <div id="column4" class="columns">
+            <div id="41" class="row"></div>
+            <div id="42" class="row"></div>
+            <div id="43" class="row"></div>
+            <div id="44" class="row"></div>
+            <div id="45" class="row"></div>
+            <div id="46" class="row"></div>
+        </div>
+
+        <div id="column5" class="columns">
+            <div id="51" class="row"></div>
+            <div id="52" class="row"></div>
+            <div id="53" class="row"></div>
+            <div id="54" class="row"></div>
+            <div id="55" class="row"></div>
+            <div id="56" class="row"></div>
+        </div>
+
+        <div id="column6" class="columns">
+            <div id="61" class="row"></div>
+            <div id="62" class="row"></div>
+            <div id="63" class="row"></div>
+            <div id="64" class="row"></div>
+            <div id="65" class="row"></div>
+            <div id="66" class="row"></div>
+        </div>
+
+        <div id="column7" class="columns">
+            <div id="71" class="row"></div>
+            <div id="72" class="row"></div>
+            <div id="73" class="row"></div>
+            <div id="74" class="row"></div>
+            <div id="75" class="row"></div>
+            <div id="76" class="row"></div>
+        </div>
+        
+    </div>
+
+
+    <div id="player1" class="players" data-color="red" draggable="true"></div>
+
+   
+    <div id="player2" class="players" data-color="yellow" draggable="true"></div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+

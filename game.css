@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --font: 'Gochi Hand', cursive;
+}
+
+body {
+    background: linear-gradient(135deg, #7ec1e8 0%,#2086ca 35%,#2a95d8 63%,#1e609a 100%);
+}
+
+#board {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    margin: 180px 380px;
+}
+
+.columns {
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.row {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(-45deg, #7ee1e8 0%,#2ac9d8 96%);
+    border-radius: 50%;
+}
+
+.players {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid white;
+    position: absolute;
+    z-index: 100;
+}
+
+#player1 {
+    background: red;
+    border: 2px solid white;
+    top: 40px;
+    left: 41%;
+}
+
+#player2 {
+    background: yellow;
+    top: 40px;
+    right: 35%;
+}
+
+.fa-book-open {
+    font-size: 50px;
+    position: absolute;
+    top: -147px;
+    left: 50px;
+    color: white;
+    text-shadow: 3px 3px 1px rgb(87, 85, 85);
+}
+
+.fa-backward {
+    font-size: 50px;
+    position: absolute;
+    top: -150px;
+    left: 150px;
+    color: white;
+    text-shadow: 3px 3px 1px rgb(87, 85, 85);
+}
+
+#icon[data-rules] {
+    position: relative;
+}
+
+#icon[data-rules]::after {
+    content: attr(data-rules);
+    display: block;
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, #dd63ae 8%,#e585c8 44%,#e478c2 68%,#f0b6df 100%);
+    border: 8px dotted rgb(94, 87, 91);
+    position: absolute;
+    top: -62px;
+    left: 40px;
+    padding: 1em 2em;
+    color: rgb(53, 51, 51);
+    border-radius: 5px;
+    font-size: xx-large;
+    font-family: var(--font);
+    white-space: pre;
+    text-shadow: 3px 3px 1px rgb(210, 188, 202);
+    transform: scale(0);
+    transition: transform 200ms ease-out;
+}
+
+#icon[data-rules]:hover::after {
+    transform: scale(1);
+}
+
+#icon2[data-restart] {
+    position: relative;
+}
+
+#icon2[data-restart]::after {
+    content: attr(data-restart);
+    display: block;
+    background: linear-gradient(135deg, #dd63ae 8%,#e585c8 44%,#e478c2 68%,#f0b6df 100%);
+    border: 4px dotted rgb(94, 87, 91);
+    position: absolute;
+    top: -144px;
+    left: 234px;
+    padding: 0.5em 1em;
+    color: rgb(53, 51, 51);
+    border-radius: 5px;
+    font-size: x-large;
+    font-family: var(--font);
+    white-space: pre;
+    text-shadow: 3px 3px 1px rgb(210, 188, 202);
+    transform: scale(0);
+    transition: transform 200ms ease-out;
+}
+
+#icon2[data-restart]:hover::after {
+    transform: scale(1);
+}
+
+.grab {
+    cursor: grab;
+}
+
+.no-drop {
+    cursor: no-drop;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.red {
+    background: red;
+}

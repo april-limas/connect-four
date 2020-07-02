@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font: 'Gochi Hand', cursive;
+}
+
+#wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #7ebce8 0%,#2a8dd8 31%,#2a8dd8 54%,#2a8dd8 68%,#2a8dd8 68%,#1e5a9a 100%);;
+    display: flex;
+   
+}
+
+.letters {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    position: relative;
+}
+
+
+#lettersA {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#lettersB {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.connect {
+    background: #EDADC7;
+}
+
+.four {
+    background: yellowgreen;
+}
+
+div p {
+    position: absolute;
+    top: 13px;
+    left: 28px;
+    color: white;
+    font-family: var(--font);
+    text-shadow: 4px 4px 2px rgb(96, 93, 93);
+    font-size: 59px;
+}
+
+img {
+    width: 250px;
+    height: 400px;
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    animation: peek 2s 5s ease-in forwards;
+}
+
+#girl {
+    top: -17px;
+    left: 240px;
+}
+
+#boy {
+    top: -9px;
+    right: 180px;
+}
+
+.bounce {
+    animation: bounce 5s cubic-bezier(.4,.17,.53,.76) both;
+}
+
+.bounce2 {
+    animation: bounce2 5s cubic-bezier(.22,.38,.75,.59) both;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(-100px)
+    }
+    20% {
+        transform: translateY(700px)
+    }
+    35% {
+        transform: translateY(100px)
+    }
+    50% {
+        transform: translateY(700px)
+    }
+    65% {
+        transform: translateY(100px)
+    }
+    80% {
+        transform: translateY(300px)
+    }
+    90% {
+        transform: translateY(200px)
+    }
+    100% {
+        transform: translateY(300px)
+    }
+
+}
+
+@keyframes bounce2 {
+    0% {
+        transform: translateY(-100px)
+    }
+    20% {
+        transform: translateY(700px)
+    }
+    35% {
+        transform: translateY(50px)
+    }
+    50% {
+        transform: translateY(700px)
+    }
+    65% {
+        transform: translateY(80px)
+    }
+    80% {
+        transform: translateY(300px)
+    }
+    90% {
+        transform: translateY(200px)
+    }
+    100% {
+        transform: translateY(300px)
+    }
+
+}
+
+@keyframes peek {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+

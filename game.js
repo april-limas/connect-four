@@ -60,7 +60,7 @@ for (let j = 0; j < columns.length; j++) {
                 // let fillCircle = document.getElementById(children[i].id)
                 let color = ev.dataTransfer.getData("color")
                 currentChip.classList.add(color)
-               
+                console.log(currentChip.id)
             // vertical
                 let down1 = parseInt(currentChip.id) + 1
                 let downOneString = down1.toString()
@@ -167,14 +167,39 @@ for (let j = 0; j < columns.length; j++) {
                    
                 }
                 
-                if (currentChip.classList.contains("yellow") && rightOneId.classList.contains("yellow") && rightTwoId.classList.contains("yellow") && rightThreeId.classList.contains("yellow")) {
-                    console.log("Yellow wins!")
-                } else if (currentChip.classList.contains("red") && rightOneId.classList.contains("red") && rightTwoId.classList.contains("red") && rightThreeId.classList.contains("red")) {
-                    console.log("Red wins!")
-                } else {
-                    console.log("Try again")
+                if (rightOneId !== null && rightTwoId !== null && rightThreeId !== null) {
+                    if (currentChip.classList.contains("yellow") && rightOneId.classList.contains("yellow") && rightTwoId.classList.contains("yellow") && rightThreeId.classList.contains("yellow")) {
+                            console.log("Yellow wins!")
+                            
+                    } else if (currentChip.classList.contains("red") && rightOneId.classList.contains("red") && rightTwoId.classList.contains("red") && rightThreeId.classList.contains("red")) {
+                            console.log("Red wins!")
+                    } else {
+                        console.log ("Try again")
+                    }
+                   
                 }
-                 
+                if (leftOneId !== null && leftTwoId !== null && leftThreeId !== null) {
+                    if (currentChip.classList.contains("yellow") && leftOneId.classList.contains("yellow") && leftTwoId.classList.contains("yellow") && leftThreeId.classList.contains("yellow")) {
+                            console.log("Yellow wins!")
+                            
+                    } else if (currentChip.classList.contains("red") && leftOneId.classList.contains("red") && leftTwoId.classList.contains("red") && leftThreeId.classList.contains("red")) {
+                            console.log("Red wins!")
+                    } else {
+                        console.log ("Try again")
+                    }
+                   
+                }
+                if (slantRightDownOneId !== null && slantRightDownTwoId !== null && slantRightDownThreeId !== null) {
+                    if (currentChip.classList.contains("yellow") && slantRightDownOneId.classList.contains("yellow") && slantRightDownTwoId.classList.contains("yellow") && slantRightDownThreeId.classList.contains("yellow")) {
+                            console.log("Yellow wins!")
+                            
+                    } else if (currentChip.classList.contains("red") && slantRightDownOneId.classList.contains("red") && slantRightDownTwoId.classList.contains("red") && slantRightDownThreeId.classList.contains("red")) {
+                            console.log("Red wins!")
+                    } else {
+                        console.log ("Try again")
+                    }
+                   
+                }
                 break
             }
         }

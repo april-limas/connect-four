@@ -10,3 +10,12 @@
     
 3. Set up winning conditions (horizontal, vertical, diagonal)
     a. Alert when a winning condition has been met for either player
+
+Group Members:
+
+1. April Limas
+2. Meshelle Merritt
+3. Charles Campbell
+4. Caitlin Golden
+
+Play Connect Four here: https://april_limas.gitlab.io/connectfour

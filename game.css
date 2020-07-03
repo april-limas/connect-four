@@ -47,13 +47,13 @@ body {
     background: red;
     border: 2px solid white;
     top: 40px;
-    left: 41%;
+    left: 36%;
 }
 
 #player2 {
     background: yellow;
     top: 40px;
-    right: 35%;
+    right: 40%;
 }
 
 .fa-book-open {

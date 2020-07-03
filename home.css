@@ -76,6 +76,37 @@ img {
     right: 180px;
 }
 
+#button {
+    height: 35%;
+    font-family: var(--font);
+    
+    position: absolute;
+    top: 58%;
+    left: 43%;
+    opacity: 0;
+    animation: peek 2s 5s ease-in forwards;
+}
+
+#start {
+    font-size: 58px;
+    position: relative;
+    top: 5px;
+    left: 10%;
+    color: rgb(245, 244, 194);
+    text-shadow: 4px 4px 2px rgb(77, 72, 72);
+}
+
+.fa-play-circle {
+    font-size: 10rem;
+    color: rgb(245, 244, 194);
+    position: relative; 
+    text-shadow: 4px 4px 2px rgb(77, 72, 72);
+}
+
+#button a {
+    text-decoration: none;
+}
+
 .bounce {
     animation: bounce 5s cubic-bezier(.4,.17,.53,.76) both;
 }
